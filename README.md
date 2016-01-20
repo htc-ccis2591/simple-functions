@@ -48,7 +48,7 @@ We can use similar syntax to set a value:
 ```
 
 #### Event Listeners
-We will discuss event listeners later in the course, but here they are used to do something when an event happens. Two events are used in this code.  
+We will discuss event listeners later in the course, but you'll see them in action here. In this assignment, they are used to do something when an event happens. Two events are used in this code.  
 
 1. The focus event occurs when you click into an input field.  When that event occurs, the output field (and in some case other input fields) value is cleared out by setting it to the empty string.
 
@@ -57,6 +57,7 @@ We will discuss event listeners later in the course, but here they are used to d
 
 ## Assignment
 The main focus of your assignment is to write the 4 functions that are used by the button click handlers:
+
 1. Moon Weight
 2. Dog Human Age
 3. A Mini Calculator
