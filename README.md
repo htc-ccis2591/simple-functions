@@ -12,7 +12,7 @@
 Before you begin this assignment, you should read through chapter 3 in your textbook.
 
 ## GitHub Info
-Repository:  https://github.com/htc-ccis2591/logic-and-functions
+Repository:  https://github.com/htc-ccis2591/basic-functions
 
 You need to fork this repository and submit a pull request to turn in the assignment.  Note that you also need to submit screenshots as described below to the D2L dropbox.
 
