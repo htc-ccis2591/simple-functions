@@ -6,8 +6,9 @@
  *   - returns the equivalent weight on the moon (17% of earth weight)
  */
 
-
-
+function calculateMoonWeight(weight) {
+    return weight * .17
+}
 
 /*
  * Problem 2
@@ -22,8 +23,9 @@
  *      larger breeds, develop more quickly in the first two years of life.
  */
 
-
-
+function calculateDogHumanAge(age) {
+    return (age - 2) * 4 + 21
+}
 
 /*
  * Problem 3
@@ -37,9 +39,20 @@
  *   - if the operator is "*" and the numbers 2 and 5, then return 10
  */
 
-
-
-
+function calculate(num1, num2, operator) {
+    if (operator === '+') {
+        return num1 + num2;
+    } if (operator === '-') {
+        return num1 - num2;
+    } if (operator === '/') {
+        return num1 / num2;
+    } if (operator === '*') {
+        return num1 * num2;
+    } if (operator === '%') {
+        return num1 % num2;
+    }
+    
+}
 /*
  * Problem 4
  * -------------------------------------------------------------------
@@ -50,6 +63,9 @@
  * Note the reading shows how to get the length of a string.
  */
 
+function stringLength(word) {
+    return word.length
+}
 
 /*
  * Problem 4 setup
@@ -60,23 +76,24 @@
 // Clear result field on input focus
 document.getElementById("string").addEventListener("focus", function(){
     // Get the length form field and clear out the value
-
+    document.getElementById("length").value = ""
 });
 
 // Setup button click to call function and update output field
 document.getElementById("submit4").addEventListener("click", function(){
     //Log a message for your function
-
+    console.log('Calculating the length of word');
 
     // Get the input value from the form & log the value
-
+    var word = document.getElementById("string").value;
 
     // Call your function that you defined above and pass in the input value
     // Save the returned value as a variable
-
+    var length = stringLength(word);
+    document.getElementById('length').value = length;
 
     // Use the variable to set the output form field value & log the result to the console
-
+    console.log('The word ' + word + ' is ' + length + ' letters long.');
 
 });
 
