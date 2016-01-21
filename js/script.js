@@ -5,10 +5,9 @@
  *   - takes a single input parameter
  *   - returns the equivalent weight on the moon (17% of earth weight)
  */
-
-
-
-
+function calculateMoonWeight(weight){
+    return weight * .17;
+}
 /*
  * Problem 2
  * -------------------------------------------------------------------
@@ -21,10 +20,14 @@
  * FYI: This calculation is based on studies that indicate dogs, except maybe
  *      larger breeds, develop more quickly in the first two years of life.
  */
-
-
-
-
+function calculateDogHumanAge(age){
+    if (age <= 2){
+        return age * 10.5;
+    }
+    if (age > 2){
+    return (age - 2) * 4 + 21;
+    }
+}
 /*
  * Problem 3
  * -------------------------------------------------------------------
@@ -36,9 +39,23 @@
  *   - if the operator is "+" and the numbers 2 and 5, then return 7
  *   - if the operator is "*" and the numbers 2 and 5, then return 10
  */
-
-
-
+function calculate(num1, num2, math){
+    if (math === '*'){
+        return num1 * num2;
+    }
+    if (math === '+'){
+        return num1 + num2;
+    }
+    if (math === '-'){
+        return num1 - num2;
+    }
+    if (math === '/'){
+        return num1 / num2;
+    }
+    if (math === '%'){
+        return num1 % num2;
+    }
+}
 
 /*
  * Problem 4
@@ -49,8 +66,8 @@
  *
  * Note the reading shows how to get the length of a string.
  */
-
-
+function lengthOfWord(word)
+    return word.length
 /*
  * Problem 4 setup
  * -------------------------------------------------------------------
@@ -60,17 +77,18 @@
 // Clear result field on input focus
 document.getElementById("string").addEventListener("focus", function(){
     // Get the length form field and clear out the value
-
+    document.getElementById("length-word").value = "";
 });
 
 // Setup button click to call function and update output field
 document.getElementById("submit4").addEventListener("click", function(){
     //Log a message for your function
-
+    console.log("word length");
 
     // Get the input value from the form & log the value
-
-
+    var length = document.getElementById("word").value;
+    console.log("word length = " + length);
+    
     // Call your function that you defined above and pass in the input value
     // Save the returned value as a variable
 
