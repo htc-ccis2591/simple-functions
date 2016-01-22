@@ -48,15 +48,17 @@ function calculateDogHumanAge(dogAge) {
 
         // first two years
         if (dogAge < 2.0) {
-
-            humanAge = (dogAge / 2) * 10.5;
+            // assuming a linear relationship
+            // each year is worth 10.5, will be 21 by age 2    
+            humanAge = (dogAge / 2) * 21;
 
         } else {
         // after two years
-            var firstTwoInHuman = 10.5;
+            var firstTwoInHuman = 21;
 
             var remainderInDog = dogAge - 2;
-
+            
+            // again assuming a linear relationship
             var remainderInHuman = remainderInDog * 4;
 
             humanAge = firstTwoInHuman + remainderInHuman;
