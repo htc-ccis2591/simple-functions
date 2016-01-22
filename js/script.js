@@ -6,7 +6,22 @@
  *   - returns the equivalent weight on the moon (17% of earth weight)
  */
 
+function calculateMoonWeight(earthWeight) {
+    
+    // check that input is numeric
+    earthWeight = Number(earthWeight);
+    
+    if (!isNaN(earthWeight)) {
+    
+        var moonWeight = 0.17 * earthWeight;
 
+        return moonWeight;
+        
+    }
+    
+    console.log('Sorry, moon weight could not be calculated.  Input must be a number.');
+    return 'Error.';
+}
 
 
 /*
@@ -22,7 +37,40 @@
  *      larger breeds, develop more quickly in the first two years of life.
  */
 
+function calculateDogHumanAge(dogAge) {
+    
+    // check that input is numeric
+    dogAge = Number(dogAge);
+    
+    if (!isNaN(dogAge)) {
+        
+        var humanAge;
 
+        // first two years
+        if (dogAge < 2.0) {
+            // assuming a linear relationship
+            // each year is worth 10.5, will be 21 by age 2    
+            humanAge = (dogAge / 2) * 21;
+
+        } else {
+        // after two years
+            var firstTwoInHuman = 21;
+
+            var remainderInDog = dogAge - 2;
+            
+            // again assuming a linear relationship
+            var remainderInHuman = remainderInDog * 4;
+
+            humanAge = firstTwoInHuman + remainderInHuman;
+
+        }
+
+        return humanAge;
+    }
+     
+    console.log('Sorry, human age could not be calculated.  Input must be a number.');
+    return 'Error.';
+}
 
 
 /*
@@ -37,7 +85,57 @@
  *   - if the operator is "*" and the numbers 2 and 5, then return 10
  */
 
+function calculate (number1, number2, operator) {
+    
+    // check that both of the first two inputs is numeric
+    if (!isNaN(Number(number1)) && !isNaN(Number(number2))) {
+    
+        var result;
 
+            //allowable operators: + - / * % 
+        switch (operator) {
+
+            case '+':
+                //add
+                result = number1 + number2;
+            break;
+
+            case '-':
+                //subtract
+                result = number1 - number2;
+
+            break;
+
+            case '/':
+                //divide
+                result = number1 / number2;
+
+            break;
+
+            case '*':
+                //multiply
+                result = number1 * number2;
+            break; 
+
+            case '%':
+                //mod
+                result = number1 % number2;
+            break; 
+
+            default:
+                //bail
+                console.log('Operator is not recognized.');
+                result = 'Error.';
+            break;
+
+        }
+
+        return result;
+    }
+    
+    console.log('First two input values number be numeric.');
+    return 'Error.';
+}
 
 
 /*
@@ -50,6 +148,12 @@
  * Note the reading shows how to get the length of a string.
  */
 
+function characterCount(word) {
+    
+    return (word.length);
+    
+}
+
 
 /*
  * Problem 4 setup
@@ -58,25 +162,29 @@
  * Follow their example, and modify it to complete this setup code
  */
 // Clear result field on input focus
-document.getElementById("string").addEventListener("focus", function(){
+document.getElementById("string").addEventListener("focus", function () {
     // Get the length form field and clear out the value
+    document.getElementById("length").value = "";
 
 });
 
 // Setup button click to call function and update output field
 document.getElementById("submit4").addEventListener("click", function(){
     //Log a message for your function
-
+    console.log('Measuring Word Length...');
 
     // Get the input value from the form & log the value
-
+    var word = document.getElementById("string").value;
+    console.log( "Word = " + word );
 
     // Call your function that you defined above and pass in the input value
     // Save the returned value as a variable
-
+    var wordLength = characterCount(word);
+    
 
     // Use the variable to set the output form field value & log the result to the console
-
+    document.getElementById("length").value = wordLength;
+    console.log( "Word Length = " + wordLength );
 
 });
 
