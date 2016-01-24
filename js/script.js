@@ -5,8 +5,17 @@
  *   - takes a single input parameter
  *   - returns the equivalent weight on the moon (17% of earth weight)
  */
-
-
+   
+        function calculateMoonWeight(weight)
+        {
+            
+            var earthWeight = Number(weight);
+            var moonWeight =  earthWeight * (17 / 100);
+            moonWeight = parseFloat(moonWeight)
+            return moonWeight;
+        
+        }
+       
 
 
 /*
@@ -23,6 +32,29 @@
  */
 
 
+    function calculateDogHumanAge(dogAge)
+    {
+      
+        var dogAge = Number(dogAge);
+        var humanAge = parseFloat(10.5);
+        if(dogAge === 1)
+            {
+                
+                return humanAge;
+            }
+        else if(dogAge === 2)
+            {
+                humanAge = humanAge * 2;
+                return humanAge;
+            }
+
+        else
+            {
+                humanAge = 21 + 4 * dogAge - 8;
+                return humanAge;
+            }
+    }
+
 
 
 /*
@@ -37,7 +69,36 @@
  *   - if the operator is "*" and the numbers 2 and 5, then return 10
  */
 
+        function calculate(number1, number2, operator)
+        {
+            var number1 = number1;
+            var number2 = number2;
+            var operator = operator;
 
+            if(operator === "+")
+
+                   {
+                     var result = number1 + number2;
+                     return result;
+                   }               
+                else if(operator === "-")
+                   {
+                       var result = number1 - number2;
+                       return result;
+                   }
+                else if(operator === "*")
+                   {
+                       var result = number1 * number2;
+                       return result;
+                   }
+                else(operator === "/")
+                   {
+                       var result = number1 / number2;
+                       return result;
+                   }
+                
+            
+        }
 
 
 /*
@@ -48,8 +109,13 @@
  *   - returns the number of characters it contains (it's length)
  *
  * Note the reading shows how to get the length of a string.
- */
-
+ */     function wordLength(string)
+        {
+            
+            var string = string;
+            var length = string.value.length;
+            return length;
+        }
 
 /*
  * Problem 4 setup
@@ -58,25 +124,27 @@
  * Follow their example, and modify it to complete this setup code
  */
 // Clear result field on input focus
+// Get the length form field and clear out the value
 document.getElementById("string").addEventListener("focus", function(){
-    // Get the length form field and clear out the value
+    document.getElementById("length").value = "";
 
 });
 
 // Setup button click to call function and update output field
 document.getElementById("submit4").addEventListener("click", function(){
     //Log a message for your function
-
+    console.log( "String Length" );
 
     // Get the input value from the form & log the value
-
+    var earthWeight = document.getElementById("string").value;
+    //console.log( "Word length is: = " + string );
 
     // Call your function that you defined above and pass in the input value
     // Save the returned value as a variable
-
-
     // Use the variable to set the output form field value & log the result to the console
-
+    var length = wordLength(string);
+    console.log( "Word length is: = " + string );
+    document.getElementById("length").value = length;
 
 });
 
@@ -126,7 +194,7 @@ document.getElementById("submit2").addEventListener("click", function(){
 
     // Get input value
     var dogAge = document.getElementById("dog-age").value;
-    console.log( "Dog's Age = " + dogAge );
+   // console.log( "Dog's Age = " + dogAge );
 
     // Write output value
     var humanAge = calculateDogHumanAge(dogAge);
