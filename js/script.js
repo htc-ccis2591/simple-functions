@@ -4,7 +4,14 @@
  * Make a function called "calculateMoonWeight" that:
  *   - takes a single input parameter
  *   - returns the equivalent weight on the moon (17% of earth weight)
- */
+ */       var x = earthWeight 
+          var y = MoonWeight
+          // when x = 1, y = .17
+          
+function calculateMoonWeight(earthWeight,MoonWeight){
+   document.getElementById(calculateMoonWeight); 
+     
+}
 
 
 
@@ -20,8 +27,16 @@
  * After that, each dog year equals 4 human years.
  * FYI: This calculation is based on studies that indicate dogs, except maybe
  *      larger breeds, develop more quickly in the first two years of life.
- */
-
+ */             var x =dogAge
+                var y = humanAge 
+             // When x = 5.25, y = 1.05
+            
+function calculateDogHumanAge(dogAge,humanAge){
+    if('Dogyear=2*HumanAge'){
+        
+    }
+    return humanAge;
+}
 
 
 
@@ -35,7 +50,18 @@
  * For example:
  *   - if the operator is "+" and the numbers 2 and 5, then return 7
  *   - if the operator is "*" and the numbers 2 and 5, then return 10
- */
+ */     var x = 5
+        var y = 2
+function calculate(2,5,){
+   if(operator = "+"){
+       document.getElementById(calculate);
+       
+   }
+    else if(operator="*"){
+        
+           document.getElementById(calculate);
+    }
+                       }
 
 
 
@@ -48,8 +74,10 @@
  *   - returns the number of characters it contains (it's length)
  *
  * Note the reading shows how to get the length of a string.
- */
-
+ */     var string = 'marvelous'; 
+function strLenght('marvelous'){
+    document.getElementById('str.Lenght');
+}
 
 /*
  * Problem 4 setup
