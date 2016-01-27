@@ -5,7 +5,9 @@
  *   - takes a single input parameter
  *   - returns the equivalent weight on the moon (17% of earth weight)
  */
-
+function calculateMoonWeight(earthWeight) {
+	return (earthWeight * 0.17);
+}
 
 
 
@@ -22,6 +24,20 @@
  *      larger breeds, develop more quickly in the first two years of life.
  */
 
+ function calculateDogHumanAge(dogAge) {
+	 
+	 var ageMessage;
+	 
+	 if(dogAge < 0) {
+		 ageMessage = "No Dog";
+	 } else if (dogAge <= 2) {
+		 ageMessage = dogAge * 10.5;
+	 } else {
+		 ageMessage = 21 + (4 * (dogAge - 2));
+	 }
+	 
+	 return ageMessage;
+ }
 
 
 
@@ -37,7 +53,33 @@
  *   - if the operator is "*" and the numbers 2 and 5, then return 10
  */
 
-
+function calculate(num1, num2, op) {
+	
+	var result;
+	
+	switch (op) {
+		case '+':
+			result = num1 + num2;
+			break;
+		case '-':
+			result = num1 - num2;
+			break;
+		case '*':
+			result = num1 * num2;
+			break;
+		case '/':
+			result = num1 / num2;
+			break;
+		case '%':
+			result = num1 % num2;
+			break;
+		default:
+			result = "invalid operator";
+	}
+	
+	return result;
+	
+}
 
 
 /*
@@ -50,6 +92,9 @@
  * Note the reading shows how to get the length of a string.
  */
 
+ function count(string) {
+	 return string.length;
+ }
 
 /*
  * Problem 4 setup
@@ -60,23 +105,27 @@
 // Clear result field on input focus
 document.getElementById("string").addEventListener("focus", function(){
     // Get the length form field and clear out the value
-
+	document.getElementById('length').value = "";
 });
 
 // Setup button click to call function and update output field
 document.getElementById("submit4").addEventListener("click", function(){
     //Log a message for your function
+	console.log("Counting letters");
 
 
     // Get the input value from the form & log the value
-
+	var str = document.getElementById('string').value;
+	console.log("Counting string '" + str + "'");
 
     // Call your function that you defined above and pass in the input value
     // Save the returned value as a variable
+	var numLetters = count(str);
 
 
     // Use the variable to set the output form field value & log the result to the console
-
+	console.log("The string has " + numLetters + " letters");
+	document.getElementById('length').value = numLetters;
 
 });
 
