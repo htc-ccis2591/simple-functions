@@ -6,6 +6,10 @@
  *   - returns the equivalent weight on the moon (17% of earth weight)
  */
 
+function calculateMoonWeight(earthWeight) {
+	var moonWeight = earthWeight * .17;
+	return moonWeight;
+}
 
 
 
@@ -22,7 +26,17 @@
  *      larger breeds, develop more quickly in the first two years of life.
  */
 
-
+function calculateDogHumanAge(dogAge) {
+	var humanAge;
+	if (dogAge <= 2.0) {
+		humanAge = dogAge * 10.5;
+	}
+	else {
+		humanAge = 21.0;
+		humanAge += 4.0 * (dogAge-2.0);
+	}
+	return humanAge;
+}
 
 
 /*
@@ -37,7 +51,26 @@
  *   - if the operator is "*" and the numbers 2 and 5, then return 10
  */
 
-
+function calculate(num1, num2, strOperator) {
+	var result
+	switch(strOperator) {
+		case "+":
+			result = num1 + num2;
+			break;
+		case "-":
+			result = num1 - num2;
+			break;
+		case "*":
+			result = num1 * num2;
+			break;
+		case "/":
+			result = num1 / num2;
+			break;
+		case "%":
+			result = num1 % num2;
+	}
+	return result;
+}
 
 
 /*
@@ -50,6 +83,10 @@
  * Note the reading shows how to get the length of a string.
  */
 
+function stringLength(word) {
+	var length = word.length;
+	return length;
+}
 
 /*
  * Problem 4 setup
@@ -60,24 +97,26 @@
 // Clear result field on input focus
 document.getElementById("string").addEventListener("focus", function(){
     // Get the length form field and clear out the value
-
+	document.getElementById("length").value = "";
 });
 
 // Setup button click to call function and update output field
 document.getElementById("submit4").addEventListener("click", function(){
     //Log a message for your function
 
-
+	console.log( "Calculating length of a word" );
     // Get the input value from the form & log the value
 
-
+	var word = document.getElementById("string").value;
+    console.log( "word = " + word );
     // Call your function that you defined above and pass in the input value
     // Save the returned value as a variable
-
+	var length = stringLength(word);
+    console.log( "Length = " + length );
 
     // Use the variable to set the output form field value & log the result to the console
 
-
+	document.getElementById("length").value = length;
 });
 
 
